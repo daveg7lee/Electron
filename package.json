@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "electron": "^11.1.0",
+    "electron-builder": "^22.9.1",
     "react-scripts": "0.8.5"
   },
   "dependencies": {
@@ -25,7 +26,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "electron": "electron ."
+    "electron": "electron .",
+    "deploy": "electron-builder --win --x64"
+  },
+  "build": {
+    "productName": "Movie App",
+    "asar": true,
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": true
+    }
   },
   "eslintConfig": {
     "extends": [
